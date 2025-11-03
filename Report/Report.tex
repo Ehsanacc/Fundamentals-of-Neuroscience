@@ -1,0 +1,728 @@
+%
+% File acl2015.tex
+%
+% Contact: car@ir.hit.edu.cn, gdzhou@suda.edu.cn
+%%
+%% Based on the style files for ACL-2014, which were, in turn,
+%% Based on the style files for ACL-2013, which were, in turn,
+%% Based on the style files for ACL-2012, which were, in turn,
+%% based on the style files for ACL-2011, which were, in turn, 
+%% based on the style files for ACL-2010, which were, in turn, 
+%% based on the style files for ACL-IJCNLP-2009, which were, in turn,
+%% based on the style files for EACL-2009 and IJCNLP-2008...
+
+%% Based on the style files for EACL 2006 by 
+%%e.agirre@ehu.es or Sergi.Balari@uab.es
+%% and that of ACL 08 by Joakim Nivre and Noah Smith
+
+\documentclass[11pt]{article}
+\usepackage{acl2015}
+\usepackage{times}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{fancyhdr} % For custom headers and footers
+\usepackage{lipsum}   % For sample text (remove if not needed)
+
+
+% \pagestyle{fancy} % Enable custom header/footer
+
+% % Set footer: Adjust content as needed
+% \fancyhead[]{}
+% \fancyfoot[C]{\thepage}
+
+%\setlength\titlebox{5cm}
+
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+
+\title{Fundamentals of Neuroscience Homework Report}
+
+\author{Ehsan Merrikhi \\
+  Sharif University of Technology \\
+  {\tt ehsan.merrikhi@gmail.com} \\\And
+  AmirAli Rostami \\
+  Sharif University of Technology \\
+  {\tt amiralirostami99@gmail.com} \\}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  This project explores the intersection of visual neuroscience and computational modeling by implementing a behavioral psychophysics task and analyzing its results. The study aims to investigate object recognition processes through human subjects and computational models inspired by the visual cortex. A MATLAB-based experimental task was designed using Psychtoolbox, featuring trials with varying stimuli to assess accuracy, response time, and confidence across specific categories. Additional tasks introduced challenging scenarios with noise and rotation to evaluate performance robustness. By comparing human data to computational outputs, this project provides insights into visual recognition, decision-making, and confidence metrics, emphasizing the synergy between neuroscience and computational methods.
+\end{abstract}
+
+\section{Introduction}
+
+This report details the findings and implementation for the Fundamentals of Neuroscience project. The project involves studying object recognition models and implementing a behavioral psychophysics task.
+
+\section{Behavioral Task}
+
+In this section of, we implement a MATLAB script using Physchtoolbox to create a
+task for the subjects to perform. Then, we will analyze the results.
+
+\subsection{Task Paradigm}
+
+\subsubsection{Fixation Cross (500 ms)}
+\begin{itemize}
+  \item Participants are instructed to focus on a fixation cross at the center of the screen.
+  \item This ensures that their attention is directed at the screen before the stimulus is presented.
+\end{itemize}
+
+\subsubsection{Stimulus Presentation (20 ms)}
+\begin{itemize}
+  \item A black-and-white image is briefly flashed on the screen.
+  \item The image may contain an animal or a non-animal object.
+  \item In test phase some subjects see noise injected images for the last two blocks and other subjects see rotated images for the last two blocks.
+\end{itemize}
+
+\subsubsection{3. Inter-Stimulus Interval (ISI) (30 ms)}
+\begin{itemize}
+  \item A blank gray screen is shown to minimize retinal persistence and prepare for the masking phase.
+  \item This helps in ensuring that the processing of the stimulus occurs before masking.
+\end{itemize}
+
+\subsubsection{4. Masking (80 ms)}
+\begin{itemize}
+  \item A noise mask (random pixel noise) is presented.
+  \item This disrupts any lingering visual information from the stimulus to prevent afterimage effects.
+\end{itemize}
+
+\subsubsection{5. Decision Screen (Until Response)}
+\begin{itemize}
+  \item A response screen appears with a fixation cross and two response indicators.
+  \item Participants must quickly decide whether the image contained an animal or not.
+  \item Responses are recorded via a button press or keypress.
+\end{itemize}
+
+
+\subsubsection{Data Collection and Analysis}
+\begin{itemize}
+  \item \textbf{Reaction Time (RT):} Time taken to respond after the decision screen appears.
+  \item \textbf{Accuracy (\% correct responses):} Number of correct responses divided by total trials.
+  \item \textbf{Error Rate:} Incorrect categorizations of animal/non-animal images.
+\end{itemize}
+
+\subsection{Subject Results}
+
+\begin{table}[h]
+  \centering
+  \renewcommand{\arraystretch}{1.2} % Adjust row spacing
+  \setlength{\tabcolsep}{4pt} % Adjust column spacing
+  \resizebox{\linewidth}{!}{ % Adjust width dynamically
+    \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+                               & \textbf{All Images} & \textbf{Head} & \textbf{Near-Body} & \textbf{Middle-Body} & \textbf{Far-Body} \\
+      \hline
+      \textbf{Original images} & $92.30\%$           & $96.73\%$     & $91.01\%$          & $93.97\%$            & $87.50\%$         \\
+      \textbf{Rotation}        & $76.91\%$           & $81.96\%$     & $85.71\%$          & $81.08\%$            & $58.92\%$         \\
+      \textbf{Noise}           & $94.66\%$           & $94.82\%$     & $98.36\%$          & $91.04\%$            & $94.44\%$         \\
+      \hline
+    \end{tabular}
+  } % End resizebox
+  \caption{Mean Accuracy of Subjects}
+  \label{tab:mean_accuracy}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \renewcommand{\arraystretch}{1.2} % Adjust row spacing
+  \setlength{\tabcolsep}{4pt} % Adjust column spacing
+  \resizebox{\linewidth}{!}{ % Adjust width dynamically
+    \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+                               & \textbf{All Images} & \textbf{Head} & \textbf{Near-Body} & \textbf{Middle-Body} & \textbf{Far-Body} \\
+      \hline
+      \textbf{Original images} & $2.11$              & $2.07$        & $2.01$             & $2.17$               & $2.17$            \\
+      \textbf{Rotation}        & $0.78$              & $0.71$        & $0.73$             & $0.83$               & $0.87$            \\
+      \textbf{Noise}           & $1.92$              & $1.93$        & $1.91$             & $1.90$               & $1.94$            \\
+      \hline
+    \end{tabular}
+  } % End resizebox
+  \caption{Mean Response Time of Subjects}
+  \label{tab:mean_response_time}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \renewcommand{\arraystretch}{1.2} % Adjust row spacing
+  \setlength{\tabcolsep}{4pt} % Adjust column spacing
+  \resizebox{\linewidth}{!}{ % Adjust width dynamically
+    \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+                               & \textbf{All Images} & \textbf{Head} & \textbf{Near-Body} & \textbf{Middle-Body} & \textbf{Far-Body} \\
+      \hline
+      \textbf{Original images} & $79.50\%$           & $81.30\%$     & $83.31\%$          & $79.39\%$            & $74.32\%$         \\
+      \textbf{Rotation}        & $50.00\%$           & $50.00\%$     & $50.00\%$          & $50.00\%$            & $50.00\%$         \\
+      \textbf{Noise}           & $78.97\%$           & $82.50\%$     & $79.42\%$          & $81.56\%$            & $71.48\%$         \\
+      \hline
+    \end{tabular}
+  } % End resizebox
+  \caption{Mean Confidence of Subjects}
+  \label{tab:mean_confidence}
+\end{table}
+
+\subsection{Questions}
+
+\begin{itemize}
+  \item \textbf{Why is the stimulus presentation period very short?}
+
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              The stimulus presentation period is very short to mimic rapid visual categorization processes, ensuring subjects rely on immediate perception rather than prolonged analysis. This helps simulate real-world rapid decision-making scenarios.
+            }}
+        \end{center}
+
+  \item \textbf{What is the role of ISI in the paradigm?}
+
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              The ISI (Inter-Stimulus Interval) serves to separate stimuli presentations, preventing overlapping visual or cognitive processes and allowing the brain to reset between trials.
+            }}
+        \end{center}
+
+  \item \textbf{What is the role of the mask in the paradigm?}
+
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              The mask disrupts the afterimage effect and prevents continued processing of the stimulus after its presentation, ensuring the decision is based solely on the brief exposure.
+            }}
+        \end{center}
+
+  \item \textbf{What were your challenges during implementing this task and collecting data from subjects? How did you overcome them?}
+
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              The challenges faced during data collection included establishing a controlled environment for consistent stimulus presentation, ensuring precise timing of ISI and mask durations, and minimizing external distractions that could affect participants' responses. Additionally, technical issues such as synchronization of response logging and stimulus display accuracy posed difficulties.
+
+              To overcome these challenges, we used precise timing functions in the experimental software to ensure accurate stimulus durations. Pilot testing was conducted to fine-tune timing parameters and verify synchronization. We also provided clear instructions to participants and minimized environmental distractions to ensure reliable data collection. Finally, data preprocessing techniques were implemented to filter out any noisy or incomplete responses.
+            }
+          }
+        \end{center}
+
+
+  \item \textbf{Bonus: What was the effect of challenging scenarios (Noise/Rotation) on accuracy, response time, and confidence?}
+
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              It is assumed that noise and rotation decrease accuracy and confidence while increasing response times. The additional visual complexity challenges subjects' ability to identify stimuli, highlighting the robustness and limitations of human visual processing.
+            }}
+        \end{center}
+
+\end{itemize}
+
+\section{Model Training and Evaluations}
+
+\subsection{Training the Model}
+
+\noindent
+In this section we train the HMAX model and extract C2 features
+
+\begin{enumerate}
+  \item Download the Code \\
+  \item Add Paths to Required Directories \\
+  \item Run the Script
+\end{enumerate}
+
+
+\begin{center}
+  \fbox{
+    \parbox{0.9\linewidth}{
+      The output of the script would before
+        ['X\_train','Y\_train', 'X\_test', 'Y\_test']
+    }
+  }
+\end{center}
+
+\subsection{Classification}
+In this part, we will apply classifiers to the C2 features obtained from the HMAX model.
+
+\subsubsection{Support Vector Machine (SVM)}
+The Support Vector Machine is a supervised learning algorithm that seeks to find
+a hyperplane in a high-dimensional feature space that best separates two classes.
+
+
+\subsubsection{Multi-Layer Perceptron (MLP)}
+The Multi-Layer Perceptron is a type of neural network consisting of an input layer,
+one or more hidden layers, and an output layer. Each layer consists of neurons connected by
+weighted edges, with non-linear activation functions applied at each node.
+
+
+\subsubsection{Task}
+Use the SVM and MLP classifiers to train, validate, and test on the C2 features extracted in
+the previous section. Compare the classification performance of both methods using the results
+from the test set.
+
+\begin{center}
+  \fbox{
+    \parbox{0.9\linewidth}{
+      We trained our classifiers on the training data and evaluated their performance using AUC, accuracy, and the confusion matrix. While the SVM achieved higher accuracy and produced a better confusion matrix, the MLP outperformed the SVM in terms of AUC.
+    }
+  }
+\end{center}
+
+\subsection{Evaluation of the Performance}
+Evaluate the performance of the classifiers using the following metrics for the test sets:
+
+\begin{itemize}
+  \item \textbf{Accuracy:} The proportion of correctly classified instances
+  \item \textbf{Confusie and AUC:} Plot the Receiver Operating Characteristic (ROC) curve and compute the Area Under the Curve (AUC)
+\end{itemize}
+
+\subsection{Task}
+
+\begin{enumerate}
+  \item Compare the results of the SVM and MLP classifiers in the following table:
+        \begin{table}[h]
+          \centering
+          \renewcommand{\arraystretch}{1.2} % Adjust row spacing
+          \setlength{\tabcolsep}{4pt} % Adjust column spacing
+          \resizebox{\linewidth}{!}{ % Adjust width dynamically
+            \begin{tabular}{|l|c|c|c|c|c|}
+              \hline
+              \textbf{Metric} & \textbf{SVM} & \textbf{MLP} \\
+              \hline
+              Accuracy        & $73.66\%$    & $72.00\%$    \\
+              \hline
+              AUC             & $0.8034$     & $0.8241$     \\
+              \hline
+            \end{tabular}
+          } % End resizebox
+          \caption{Comparison of Classifiers on Test Set}
+          \label{tab:Classifiers_Comparison}
+        \end{table}
+  \item Which classifier performs better on the given data?
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              While the SVM achieved higher accuracy and produced a better confusion matrix, the MLP outperformed the SVM in terms of AUC.
+            }
+          }
+        \end{center}
+  \item Calculate the accuracy for all categories (Head, Near-Body, Middle-Body, Far-Body) and
+        report them.
+        \begin{table}[h]
+          \centering
+          \renewcommand{\arraystretch}{1.2} % Adjust row spacing
+          \setlength{\tabcolsep}{4pt} % Adjust column spacing
+          \resizebox{\linewidth}{!}{ % Adjust width dynamically
+            \begin{tabular}{|l|c|c|c|c|c|}
+              \hline
+              Accuracy         & Head   & Near-Body & Middle-Body & Far-Body \\
+              \hline
+              SVM (RBF Kernel) & $74\%$ & $76\%$    & $72\%$      & $72\%$   \\
+              \hline
+              MLP              & $66\%$ & $56\%$    & $58\%$      & $58\%$   \\
+              \hline
+            \end{tabular}
+          } % End resizebox
+          \caption{Comparison of Classifiers on Modified Test Sets}
+          \label{tab:Modified_Classifiers_Comparison}
+        \end{table}
+        % \begin{center}
+        %   \fbox{
+        %     \parbox{0.9\linewidth}{
+
+        %     }
+        %   }
+        % \end{center}
+  \item Plot the accuracy for each category.
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              \includegraphics*[width=\linewidth]{Images/CatAcc.png}
+            }
+          }
+        \end{center}
+  \item How does changing the hyperparameters (e.g., kernel type for SVM, hidden layers for
+        MLP) affect the results?
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              Changing hyperparameters significantly impacts model performance:
+              \begin{itemize}
+                \item SVM (Kernel Type): Affects decision boundary flexibility—linear kernels work well for simple data, while RBF captures complex patterns.
+                \item MLP (Hidden Layers): More layers improve learning capacity but may lead to overfitting and higher computational cost.
+              \end{itemize}
+              Tuning these parameters balances accuracy, generalization, and efficiency.
+            }
+          }
+        \end{center}
+\end{enumerate}
+
+\textcolor{blue}{∗Bonus:} In this part, you will evaluate the robustness of the HMAX model by testing it on
+challenging visual scenarios:
+
+\noindent
+This code is added to the HMAX model to inject gaussian noise.
+\begin{lstlisting}[language=Matlab]
+% ADD GAUSSIAN NOISE TO TEST IMAGES
+for i = 3:4  % Apply noise only to test images
+  for j = 1:length(cI{i})
+    cI{i}{j} = imnoise(cI{i}{j}, ...
+    'gaussian', 0, 0.01); 
+  end
+end
+\end{lstlisting}
+
+\noindent
+This code is added to the HMAX model to inject gaussian noise.
+\begin{lstlisting}[language=Matlab, caption={Rotate Test Images}, label={code:rotate_images}]
+% ROTATE TEST IMAGES
+angle = 15; 
+for i = 3:4  
+  for j = 1:length(cI{i})
+    cI{i}{j} = imrotate(cI{i}{j},
+     angle, 'bilinear', 'crop');
+  end
+end
+\end{lstlisting}
+
+
+\begin{enumerate}
+  \item Add Gaussian noise to the test images and use them as input to the HMAX model.
+        % \begin{center}
+        %   \fbox{
+        %     \parbox{0.9\linewidth}{
+
+        %     }
+        %   }
+        % \end{center}
+
+  \item Rotate the test images by a random angle and use them as input to the HMAX model.
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              Using noisy and rotated images on HMAX gives us the results shown in the table below
+            }
+          }
+        \end{center}
+
+        \begin{table}[h]
+          \centering
+          \renewcommand{\arraystretch}{1.2} % Adjust row spacing
+          \setlength{\tabcolsep}{4pt} % Adjust column spacing
+          \resizebox{\linewidth}{!}{ % Adjust width dynamically
+            \begin{tabular}{|l|c|c|c|c|c|}
+              \hline
+              \textbf{Metric} & \textbf{SVM (Noisy)} & \textbf{SVM (Rotated)} & \textbf{MLP (Noisy)} & \textbf{MLP (Rotated)} \\
+              \hline
+              Accuracy        & $64.00\%$            & $70.33\%$              & $58.16\%$            & $59.15\%$              \\
+              \hline
+              AUC             & $0.6879$             & $0.7718$               & $0.6793$             & $0.7991$               \\
+              \hline
+            \end{tabular}
+          } % End resizebox
+          \caption{Comparison of Classifiers on Modified Test Sets}
+          \label{tab:Modified_Classifiers_Comparison}
+        \end{table}
+
+  \item How do the results from the modified test sets compare to the results from the normal
+        test set? Provide an explanation for the observed differences
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              The results on the modified test sets are significantly weaker than those on the normal tests in both accuracy and AUC. This performance degradation can be attributed to the HMAX model’s sensitivity to noise and rotations. Additionally, this finding aligns with our understanding of human visual processing: our brains can distinguish normal images more easily than noisy or rotated ones because normal images are inherently more interpretable.
+            }
+          }
+        \end{center}
+  \item Which classifier is more robust to noise and rotation? Why?
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              SVM demonstrates greater robustness to noise and rotation. While both SVM and MLP experience a significant drop in accuracy, SVM maintains a considerably higher accuracy than MLP. In terms of AUC, the difference between the two models is minimal. Therefore, we conclude that SVM is more resilient to noise and rotation.
+            }
+          }
+        \end{center}
+  \item How might the HMAX model be improved to handle noisy or rotated images better?
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              To improve HMAX for noisy or rotated images:
+              \begin{itemize}
+                \item Data Augmentation: Train with noise and rotated images for better generalization.
+                \item Feature Enhancement: Optimize Gabor filters and use multi-scale processing.
+                \item Preprocessing: Apply denoising filters and affine normalization.
+                \item Hybrid Models: Combine HMAX with CNNs for improved robustness.
+                \item Adaptive C2 Layer: Modify pooling and introduce a voting mechanism.
+                \item Learning-Based Adaptations: Fine-tune on noisy data and integrate attention mechanisms.
+              \end{itemize}
+
+
+
+            }
+          }
+        \end{center}
+
+\end{enumerate}
+
+
+\subsection{Effect of Dimension Reduction}
+\noindent
+Dimension reduction is a technique used to reduce the number of features in a dataset
+while retaining as much of the original variance as possible. By reducing dimensions, we
+aim to simplify the dataset, improve computational efficiency, and potentially enhance model
+performance by eliminating redundant or irrelevant features. One commonly used method for
+dimension reduction is Principal Component Analysis (PCA).
+
+\subsubsection{Principal Component Analysis (PCA)}
+PCA is a statistical technique that transforms a dataset into a new coordinate system
+such that the greatest variances in the data are represented along the first principal components.
+
+\subsubsection{Task and Analysis}
+
+\begin{enumerate}
+  \item Apply PCA to the C2 features, selecting principal components to retain at least 95% of
+        the variance.
+  \item Train and test the SVM and MLP classifiers using the reduced-dimension dataset.
+  \item Evaluate the performance of the classifiers in terms of accuracy, confusion matrix, and
+        AUC.
+  \item Compare the results with those obtained from the original full-dimension dataset in a
+        table:
+\end{enumerate}
+
+
+\begin{table}[h]
+  \centering
+  \renewcommand{\arraystretch}{1.2} % Adjust row spacing
+  \setlength{\tabcolsep}{4pt} % Adjust column spacing
+  \resizebox{\linewidth}{!}{ % Adjust width dynamically
+    \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+      \textbf{Metric} & \textbf{SVM (Original)} & \textbf{SVM (PCA)} & \textbf{MLP (Original)} & \textbf{MLP (PCA)} \\
+      \hline
+      Accuracy        & $73.66\%$               & $73.66\%$          & $72.00\%$               & $73.50\%$          \\
+      \hline
+      AUC             & $0.8034$                & $0.8093$           & $0.8241$                & $0.8099$           \\
+      \hline
+    \end{tabular}
+  } % End resizebox
+  \caption{Comparison of Classifiers Before and After PCA}
+  \label{tab:PCA_Classifiers_Comparison}
+\end{table}
+
+\subsubsection{Questions}
+\begin{enumerate}
+  \item How does PCA affect the performance of the SVM and MLP classifiers? Does it improve
+        or degrade performance?
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              Its impact on performance depends on the dataset—sometimes it improves generalization by removing noise, but it can also degrade performance if important features are lost. In this case PCA has not changed the performance of HMAX model.
+            }
+          }
+        \end{center}
+
+  \item How does the computational efficiency change after applying PCA?
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              PCA reduces computational cost by eliminating redundant features, which can help both SVM and MLP train faster.
+            }
+          }
+        \end{center}
+
+  \item What are the advantages and disadvantages of using PCA for dimension reduction in this
+        context?
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              Advantages:
+              \begin{itemize}
+                \item Reduces computational cost and training time.
+                \item Removes redundant and less important features.
+                \item Can improve model generalization by reducing noise.
+              \end{itemize}
+              Disadvantages:
+              \begin{itemize}
+                \item Risk of losing important information.
+                \item May not always improve classification performance.
+                \item Harder to interpret transformed features.
+              \end{itemize}
+            }
+          }
+        \end{center}
+
+\end{enumerate}
+
+\section{Exploring Confidence}
+\noindent
+In this part, we aim to define and calculate a confidence metric based on the HMAX model’s
+output. Confidence will be evaluated by analyzing the output of the classifier for different
+inputs.
+
+\subsection{Task}
+\noindent
+In the previous section, you implemented SVM and MLP classifiers, where the outputs were
+likely binary.
+
+\begin{enumerate}
+  \item Implement a classifier that provides probability outputs for each class.
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              In the previous section, we implemented binary classifiers. In this section, we will modify the classifiers to provide probability outputs for each class. Specifically, the output for a given sample should be a probability distribution across the classes, such as 0.7 for class "animal" and 0.3 for class "non-animal."
+              \begin{itemize}
+                \item We use classifiers such as SVM with probability outputs (using \texttt{probability=True}) and MLP to obtain these probabilities.
+                \item These probability values will indicate how likely each class is for a given sample.
+              \end{itemize}
+            }
+          }
+        \end{center}
+  \item Calculate the absolute difference of the outputs for each class.
+        \begin{center}
+          \fbox{
+          \parbox{0.9\linewidth}{
+          To calculate the confidence score, we use the absolute difference between the probabilities of the classes. For a given sample, the confidence score can be computed using the following formula:
+          \[
+            \texttt{Confidence} = |P_{\texttt{class1}} - P_{\texttt{class2}}|
+          \]
+          For example, if the probabilities are 0.7 for class "animal" and 0.3 for class "non-animal", the confidence score will be:
+          \[
+            \texttt{Confidence} = |0.7 - 0.3| = 0.4
+          \]
+          }
+          }
+        \end{center}
+  \item Calculate the mean confidence of the model for the entire dataset.
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              Next, we calculate the mean confidence of the model for the entire dataset. The mean confidence is obtained by averaging the confidence scores for all test samples:
+              \[
+                \texttt{Mean Confidence} = \frac{1}{N} \sum_{i=1}^{N} \texttt{Confidence}_i
+              \]
+              where \(N\) is the total number of test samples.
+              The mean confidence values for the models are as follows:
+              \begin{itemize}
+                \item Mean Confidence for SVM: 0.5709
+                \item Mean Confidence for MLP: 0.8382
+                \item Mean Confidence for SVM (PCA): 0.6211
+                \item Mean Confidence for MLP (PCA): 0.8256
+              \end{itemize}
+            }
+          }
+        \end{center}
+  \item Calculate the confidence metric for all categories.
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              For different categories, such as "Head", "Near-Body", "Middle-Body", and "Far-Body", we will calculate the confidence score separately for each category. We will aggregate the confidence scores for each category and compute the mean confidence for that category.
+
+              \begin{itemize}
+                \item First, we filter the samples belonging to each category based on their indices.
+                \item Then, we calculate the mean confidence for each category.
+              \end{itemize}
+            }
+          }
+        \end{center}
+  \item Plot the confidence level for each category.
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              \includegraphics*[width=\linewidth]{Images/ConfidenceLvl.png}
+            }
+          }
+        \end{center}
+  \item Use PCA to reduce input vectors’ dimension and then calculate the confidence and plot
+        it for all categories again.
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              Finally, we will apply Principal Component Analysis (PCA) to reduce the dimensionality of the input vectors and recalculate the confidence for each category. PCA will help retain 95\% of the variance in the data.
+              \begin{itemize}
+                \item We apply PCA to both the training and testing datasets.
+                \item After applying PCA, we recalculate the confidence scores for the SVM and MLP classifiers.
+                \item We then plot the confidence scores for all categories again.
+              \end{itemize}
+              Mean Confidence for SVM (PCA): 0.6470 \\
+              Mean Confidence for MLP (PCA): 0.8282 \\
+              \includegraphics*[width=\linewidth]{Images/ConfidenceLvlPCA.png}
+            }
+          }
+        \end{center}
+  \item \textcolor{blue}{∗Bonus} Use the noisy and rotated images to calculate the confidence of the model for
+        these images. Plot the confidence for all categories as well. (PCA is not needed for this
+        part.)
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              Rotated data mean confidence results and plot for different categories:
+              Mean Confidence for SVM: 0.5431 \\
+              Mean Confidence for MLP: 0.8540 \\
+              \includegraphics*[width=\linewidth]{Images/outputRotate.png}
+
+              Noisy data mean confidence results and plot for different categories:
+              Mean Confidence for SVM: 0.6183 \\
+              Mean Confidence for MLP: 0.8290 \\
+              \includegraphics*[width=\linewidth]{Images/outputNoisy.png}
+            }
+          }
+        \end{center}
+\end{enumerate}
+
+\subsection{Questions}
+\begin{enumerate}
+  \item Compare the confidence scores for the SVM and MLP classifiers and discuss the results.Which classifier provides higher confidence?
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              MLP shows higher confidence scores than SVM because:
+              \begin{itemize}
+                \item Non-Linearity Handling: MLP, with its multiple layers and activation functions, captures complex patterns better, leading to stronger decision boundaries.
+                \item Probability Estimates: MLP outputs softmax probabilities, making its confidence scores more distinct compared to SVM’s margin-based decision.
+                \item Feature Learning: MLP learns hierarchical feature representations, enhancing certainty in classification.
+              \end{itemize}
+            }
+          }
+        \end{center}
+  \item How does confidence relate to classification accuracy?
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              Confidence reflects how certain a model is in its predictions, but high confidence doesn’t always mean high accuracy. A well-calibrated model balances confidence with accuracy, while overconfident models may misclassify with high certainty.
+            }
+          }
+        \end{center}
+
+  \item What is the effect of PCA on confidence level?
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              PCA can affect confidence levels in classification by reducing feature dimensionality:
+              \begin{itemize}
+                \item Increased Confidence: If PCA removes noise and redundant features, models may make clearer distinctions, leading to higher confidence.
+                \item Decreased Confidence: If important features are lost, the model may struggle to differentiate classes, reducing confidence in predictions.
+              \end{itemize}
+              In this case PCA caused a growth in our confidence level.
+            }
+          }
+        \end{center}
+  \item What is the effect of noise and rotation on confidence level?
+        \begin{center}
+          \fbox{
+            \parbox{0.9\linewidth}{
+              Noise and rotation generally reduce confidence levels because they distort key features used for classification.
+              \begin{itemize}
+                \item Noise: Adds random variations, making it harder for the model to recognize patterns, leading to lower confidence.
+                \item Rotation: Alters feature alignment, especially affecting models sensitive to spatial structure, reducing certainty in predictions.
+              \end{itemize}
+              If a model is robust, confidence may drop less, but significant distortions typically lead to lower confidence and accuracy.
+            }
+          }
+        \end{center}
+\end{enumerate}
+
+\end{document}

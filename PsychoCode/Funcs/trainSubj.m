@@ -1,0 +1,153 @@
+function results = trainSubj(trainPhase, win, winRect)
+
+    % TRAINUBJ - Runs the training phase of the experiment (5 blocks by default).
+    %
+    % Each block has:
+    %   - 120 trials (default).
+    %   - After each block, the subject can rest.
+
+    % ----------------
+    % INITIAL SETUP
+    % ----------------
+    if trainPhase
+        [animalImages, nonAnimalImages] = loadTrainingStimuli();
+    else
+        [animalImages, nonAnimalImages] = loadTestStimuli();
+    end
+
+    global nTrainingBlocks nTrialsPerBlock fixDuration ...
+       stimDuration greyDuration maskDuration;
+
+    try
+
+        % Get center coordinates
+        [xCenter, yCenter] = RectCenter(winRect);
+
+        % Text style
+        Screen('TextSize', win, 30);
+        HideCursor;
+
+        % Preallocate a data structure for responses (optional)
+        % Example: each row is a trial, columns store block#, trial#, imageName, RT, etc.
+%         results = cell(nTrainingBlocks * nTrialsPerBlock, 7);
+%         resultsHeader = {'Block','Trial','ImageName','Response','RT','Correct','ConfidenceLevel'};
+        % Number of total trials
+        numTrials = nTrainingBlocks * nTrialsPerBlock;
+        
+        % Initialize results as a structure array
+        results = struct('Block', cell(1, numTrials), ...
+                         'Trial', cell(1, numTrials), ...
+                         'ImageName', cell(1, numTrials), ...
+                         'Response', cell(1, numTrials), ...
+                         'RT', cell(1, numTrials), ...
+                         'Correct', cell(1, numTrials), ...
+                         'ConfidenceLevel', cell(1, numTrials));
+
+
+        trialCounter = 1; % to index into results
+
+        % ----------------
+        % BLOCK LOOP
+        % ----------------
+%         for blockNum = 1:nTrainingBlocks
+        for blockNum = 1:1
+
+            % Shuffle or prepare your trial order for this block.
+            % For demonstration, we randomly pick half animal, half non-animal
+            % per block. Adjust as needed:
+            [blockStimuli, blockStimLabels] = getBlockStimuli(animalImages, nonAnimalImages, nTrialsPerBlock);
+
+            % ---------
+            % TRIAL LOOP
+            % ---------
+            imagesAndLabels = blockStimuli{blockNum};
+            images = imagesAndLabels{1};
+            imgNames = imagesAndLabels{2};
+            Labels = blockStimLabels{blockNum};
+
+%             for trial = 1:nTrialsPerBlock
+            for trial = 1:1
+
+                % Retrieve the image data for the current trial
+                img = images{1, trial};       % Row 1 contains image data
+                imgName = imgNames{1, trial};
+
+                correctLabel = Labels(trial);
+                
+                % -- Step 1: Fixation Cross --
+                showFixationCross(win, xCenter, yCenter, fixDuration);
+            
+                % -- Step 2: Stimulus --
+                showStimulusStep(win, img, stimDuration);
+            
+                % -- Step 3: Gray Screen / ISI --
+                showGrayStep(win, greyDuration);
+            
+                % -- Step 4: Mask --
+                showMaskStep(win, img, maskDuration);
+            
+                % -- Step 5: Decision Screen --
+                [response, rt, confidence] = decisionScreenStep(win, xCenter, yCenter);
+
+                % Evaluate correctness (just an example)
+                isCorrect = isResponseTrue(response, correctLabel);
+
+                % -----------------------------
+                % STORE DATA
+                % -----------------------------
+%                 results{trialCounter, 1} = blockNum;
+%                 results{trialCounter, 2} = trial;
+%                 results{trialCounter, 3} = imgName;      % image name or path
+%                 results{trialCounter, 4} = response;     % subject response
+%                 results{trialCounter, 5} = rt;           % response time
+%                 results{trialCounter, 6} = isCorrect;    % correctness
+%                 results{trialCounter, 7} = confidence;
+                % Store data for each trial
+                results(trialCounter).Block = blockNum;
+                results(trialCounter).Trial = trial;
+                results(trialCounter).ImageName = imgName;       % Image name or path
+                results(trialCounter).Response = response;       % Subject response
+                results(trialCounter).RT = rt;                   % Response time
+                results(trialCounter).Correct = isCorrect;       % Correctness
+                results(trialCounter).ConfidenceLevel = confidence; % Confidence level
+
+
+                trialCounter = trialCounter + 1;
+
+%                 % Optional short ITI or break between trials
+%                 Screen('FillRect', win, [128 128 128]);
+%                 Screen('Flip', win);
+%                 WaitSecs(0.5);
+            end
+
+            % ----------------------------------
+            % END OF BLOCK: TAKE A SHORT BREAK
+            % ----------------------------------
+            breakText = sprintf('End of Training Block %d. Please rest.\nPress any key to continue...', blockNum);
+            DrawFormattedText(win, breakText, 'center', 'center', [0 0 0]);
+            Screen('Flip', win);
+            KbWait([], 2);
+
+        end
+
+    catch ME
+        % If there is an error, we close the screen
+        sca;
+        rethrow(ME);
+    end
+end
+
+% =========================
+% AUXILIARY FUNCTIONS
+% =========================
+
+
+function isCorrect = isResponseTrue(response, correctLabel)
+    if strcmp(response, 'Animal') && correctLabel == 1
+        isCorrect = 1;
+    elseif strcmp(response, 'Non-Animal') && correctLabel == 0
+        isCorrect = 1;
+    else
+        isCorrect = 0;
+    end
+end

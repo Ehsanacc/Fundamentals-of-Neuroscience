@@ -1,0 +1,491 @@
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.15)  4 FEB 2025 02:16
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"d:/Ehsan/studies/uni/sem 7/Neuroscience/Project/Report/Report.tex"
+(d:/Ehsan/studies/uni/sem 7/Neuroscience/Project/Report/Report.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2022-11-02> (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count181
+\c@section=\count182
+\c@subsection=\count183
+\c@subsubsection=\count184
+\c@paragraph=\count185
+\c@subparagraph=\count186
+\c@figure=\count187
+\c@table=\count188
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (./acl2015.sty
+Conference Style for ACL 2015 -- released December 7, 2014
+\titlebox=\skip50
+) (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+) (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+) (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+) (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+ (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+) (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+ (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 227.
+ (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count189
+\lst@gtempboxa=\box51
+\lst@token=\toks17
+\lst@length=\count190
+\lst@currlwidth=\dimen143
+\lst@column=\count191
+\lst@pos=\count192
+\lst@lostspace=\dimen144
+\lst@width=\dimen145
+\lst@newlines=\count193
+\lst@lineno=\count194
+\lst@maxwidth=\dimen146
+ (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count195
+\lst@skipnumbers=\count196
+\lst@framebox=\box52
+) (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip51
+\f@nch@O@elh=\skip52
+\f@nch@O@erh=\skip53
+\f@nch@O@olh=\skip54
+\f@nch@O@orh=\skip55
+\f@nch@O@elf=\skip56
+\f@nch@O@erf=\skip57
+\f@nch@O@olf=\skip58
+\f@nch@O@orf=\skip59
+) (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.sty (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-11-02 L3 programming layer (loader) 
+ (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2022-10-26 L3 backend support: XeTeX
+\g__graphics_track_int=\count197
+\l__pdf_internal_box=\box53
+\g__pdf_backend_object_int=\count198
+\g__pdf_backend_annotation_int=\count199
+\g__pdf_backend_link_int=\count266
+))
+Package: l3keys2e 2022-06-22 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count267
+\l__lipsum_a_int=\count268
+\l__lipsum_b_int=\count269
+ (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+LaTeX Font Info:    Trying to load font information for TU+ptm on input line 55.
+LaTeX Font Info:    No file TUptm.fd. on input line 55.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/m/n' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 55.
+
+(./Report.aux
+
+LaTeX Warning: Label `tab:Modified_Classifiers_Comparison' multiply defined.
+
+)
+\openout1 = `Report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 55.
+ (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+\c@lstlisting=\count270
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/m/n' instead on input line 56.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 56.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 56.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 56.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 56.
+(d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Trying to load font information for TU+pcr on input line 56.
+LaTeX Font Info:    No file TUpcr.fd. on input line 56.
+
+
+LaTeX Font Warning: Font shape `TU/pcr/m/n' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 56.
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 59--60
+\TU/ptm/m/n/10.95 and confidence across specific cate-
+ []
+
+
+Underfull \vbox (badness 1533) has occurred while \output is active []
+
+ [1
+
+
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 129.
+
+Underfull \hbox (badness 3826) in paragraph at lines 181--181
+[]\TU/ptm/b/n/10.95 The stimulus presentation period
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 181--181
+\TU/ptm/b/n/10.95 is very short to mimic rapid vi-
+ []
+
+
+Underfull \hbox (badness 4726) in paragraph at lines 190--190
+[]\TU/ptm/b/n/10.95 The ISI (Inter-Stimulus Interval)
+ []
+
+
+Underfull \hbox (badness 2376) in paragraph at lines 211--211
+\TU/ptm/b/n/10.95 trolled environment for consistent
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 211--211
+[]\TU/ptm/b/n/10.95 To overcome these challenges, we
+ []
+
+
+Underfull \hbox (badness 2443) in paragraph at lines 221--221
+\TU/ptm/b/n/10.95 additional visual complexity chal-
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 221--221
+\TU/ptm/b/n/10.95 lenges subjects’ ability to identify
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+ []
+
+
+Underfull \hbox (badness 1117) in paragraph at lines 258--261
+\TU/ptm/b/n/10.95 weighted edges, with non-linear activation
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 281--282
+\TU/ptm/b/n/10.95 Operating Characteristic (ROC) curve
+ []
+
+
+Underfull \hbox (badness 1342) in paragraph at lines 314--337
+\TU/ptm/b/n/10.95 (Head, Near-Body, Middle-Body, Far-
+ []
+
+File: Images/CatAcc.png Graphic file (type bmp)
+<Images/CatAcc.png>
+
+Underfull \hbox (badness 4193) in paragraph at lines 361--361
+[]\TU/ptm/b/n/10.95 Changing hyperparameters signifi-
+ []
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 361--361
+[]\TU/ptm/b/n/10.95 SVM (Kernel Type): Affects
+ []
+
+
+Underfull \hbox (badness 1565) in paragraph at lines 361--361
+\TU/ptm/b/n/10.95 decision boundary flexibility—
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 361--361
+[]\TU/ptm/b/n/10.95 MLP (Hidden Layers): More
+ []
+
+[3] (d:/Ehsan/TeXlive/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+
+LaTeX Font Warning: Font shape `TU/ptm/m/it' undefined
+(Font)              using `TU/ptm/m/n' instead on input line 371.
+
+
+Overfull \hbox (10.86574pt too wide) in paragraph at lines 371--372
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
+[][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (17.43579pt too wide) in paragraph at lines 374--375
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--466
+[]\TU/ptm/m/it/10.95 Hybrid Models: Combine
+ []
+
+
+Underfull \hbox (badness 3158) in paragraph at lines 466--466
+[]\TU/ptm/m/it/10.95 Adaptive C2 Layer: Modify
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--466
+[]\TU/ptm/m/it/10.95 Learning-Based Adaptations:
+ []
+
+
+Underfull \hbox (badness 1960) in paragraph at lines 466--466
+\TU/ptm/m/it/10.95 Fine-tune on noisy data and
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+Underfull \hbox (badness 1484) in paragraph at lines 525--525
+\TU/ptm/m/it/10.95 on the dataset—sometimes it im-
+ []
+
+
+Underfull \hbox (badness 1888) in paragraph at lines 525--525
+\TU/ptm/m/it/10.95 proves generalization by removing
+ []
+
+
+Underfull \hbox (badness 4819) in paragraph at lines 534--534
+[]\TU/ptm/m/it/10.95 PCA reduces computational cost
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 534--534
+\TU/ptm/m/it/10.95 by eliminating redundant features,
+ []
+
+[5]
+Underfull \hbox (badness 1033) in paragraph at lines 599--600
+[]\TU/pcr/m/n/10.95 Calculate the mean confidence of the
+ []
+
+
+Overfull \hbox (5.76448pt too wide) detected at line 616
+[] \OT1/cmr/m/n/10.95 = [] [] [][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 616--616
+[]\TU/pcr/m/n/10.95 Mean Confidence for SVM:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 616--616
+[]\TU/pcr/m/n/10.95 Mean Confidence for MLP:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 616--616
+[]\TU/pcr/m/n/10.95 Mean Confidence for SVM
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 616--616
+[]\TU/pcr/m/n/10.95 Mean Confidence for MLP
+ []
+
+
+Underfull \vbox (badness 1655) has occurred while \output is active []
+
+
+Underfull \hbox (badness 3989) in paragraph at lines 629--629
+[]\TU/pcr/m/n/10.95 For different categories, such as
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--629
+\TU/pcr/m/n/10.95 ”Head”, ”Near-Body”, ”Middle-
+ []
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 629--629
+\TU/pcr/m/n/10.95 Body”, and ”Far-Body”, we will
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 629--629
+[]\TU/pcr/m/n/10.95 Then, we calculate the mean
+ []
+
+File: Images/ConfidenceLvl.png Graphic file (type bmp)
+<Images/ConfidenceLvl.png>
+[6]
+Underfull \hbox (badness 1158) in paragraph at lines 654--654
+\TU/pcr/m/n/10.95 and recalculate the confidence for
+ []
+
+
+Underfull \hbox (badness 2426) in paragraph at lines 654--654
+[]\TU/pcr/m/n/10.95 We then plot the confidence
+ []
+
+File: Images/ConfidenceLvlPCA.png Graphic file (type bmp)
+<Images/ConfidenceLvlPCA.png>
+File: Images/outputRotate.png Graphic file (type bmp)
+<Images/outputRotate.png>
+File: Images/outputNoisy.png Graphic file (type bmp)
+<Images/outputNoisy.png>
+
+Underfull \hbox (badness 3428) in paragraph at lines 672--672
+\TU/pcr/m/n/10.95 and plot for different categories:
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 4072) in paragraph at lines 689--689
+[]\TU/pcr/m/n/10.95 Probability Estimates: MLP
+ []
+
+
+Underfull \hbox (badness 3343) in paragraph at lines 689--689
+\TU/pcr/m/n/10.95 outputs softmax probabilities,
+ []
+
+
+Underfull \hbox (badness 5359) in paragraph at lines 689--689
+\TU/pcr/m/n/10.95 making its confidence scores
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 689--689
+\TU/pcr/m/n/10.95 more distinct compared to
+ []
+
+
+Underfull \hbox (badness 3229) in paragraph at lines 689--689
+\TU/pcr/m/n/10.95 tions, enhancing certainty in
+ []
+
+
+Underfull \hbox (badness 1910) in paragraph at lines 697--697
+[]\TU/pcr/m/n/10.95 Confidence reflects how certain a
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 697--697
+\TU/pcr/m/n/10.95 balances confidence with accuracy,
+ []
+
+[7]
+Underfull \hbox (badness 1062) in paragraph at lines 711--711
+\TU/pcr/m/n/10.95 distinctions, leading to higher
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 711--711
+[]\TU/pcr/m/n/10.95 Decreased Confidence: If im-
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 711--711
+\TU/pcr/m/n/10.95 portant features are lost, the
+ []
+
+[8
+
+] (./Report.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4148 strings out of 475641
+ 67655 string characters out of 5793616
+ 707416 words of memory out of 5000000
+ 25409 multiletter control sequences out of 15000+600000
+ 473359 words of font info for 47 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 72i,11n,77p,903b,1511s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on Report.xdv (8 pages, 202020 bytes).
